@@ -1,0 +1,44 @@
+<div class="container mt-5">
+  <h2>Add a New Car</h2>
+  <form (ngSubmit)="onSubmit()" #carForm="ngForm">
+    <div class="form-group">
+      <label for="modele">Model</label>
+      <input type="text" class="form-control" id="modele" required [(ngModel)]="car.modele" name="modele" #modele="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="year">Year</label>
+      <input type="number" class="form-control" id="year" required [(ngModel)]="car.year" name="year" #year="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="nbPlace">Number of Seats</label>
+      <input type="number" class="form-control" id="nbPlace" required [(ngModel)]="car.nbPlace" name="nbPlace" #nbPlace="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="typeVehicule">Type</label>
+      <input type="text" class="form-control" id="typeVehicule" required [(ngModel)]="car.typeVehicule" name="typeVehicule" #typeVehicule="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="energ">Energy</label>
+      <input type="text" class="form-control" id="energ" required [(ngModel)]="car.energ" name="energ" #energ="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="consommation">Fuel Efficiency</label>
+      <input type="text" class="form-control" id="consommation" required [(ngModel)]="car.consommation" name="consommation" #consommation="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="tronsmition">Transmission</label>
+      <input type="text" class="form-control" id="tronsmition" required [(ngModel)]="car.tronsmition" name="tronsmition" #tronsmition="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="prixParJour">Price per Day</label>
+      <input type="number" class="form-control" id="prixParJour" required [(ngModel)]="car.prixParJour" name="prixParJour" #prixParJour="ngModel">
+    </div>
+    <div class="form-group">
+      <label>Car Image</label>
+      <input type="file" (change)="onFileSelected($event)" accept="image/*" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="!carForm.form.valid">Add Car</button>
+  </form>
+</div>
